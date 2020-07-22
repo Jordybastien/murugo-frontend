@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from '../views/login';
 import NotFound from '../views/notFound';
 import ReduxToastr from 'react-redux-toastr';
+import ProtectedRoute from '../components/ProtectedRoute';
+import Dashboard from '../views/dashboard';
 
 const Routing = () => {
   return (
@@ -21,6 +23,7 @@ const Routing = () => {
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
+          <ProtectedRoute path="/dashboard" component={Dashboard} />
           <Route component={NotFound} />
         </Switch>
       </Router>
