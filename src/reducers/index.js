@@ -5,6 +5,7 @@ import error from './error';
 import authedUser from './authedUser';
 import link from './callBackLink';
 import loading from './loading';
+import mortgages from './mortgage';
 
 export default combineReducers({
   form: formReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   authedUser,
   link,
   loading,
+  mortgages,
 });

@@ -29,7 +29,7 @@ DashboardRoute.propTypes = {
 const mapStateToProps = ({ authedUser }) => {
   return {
     isAuth: Object.keys(authedUser).length !== 0,
-    role: authedUser.role,
+    role: authedUser.role.name,
   };
 };
 

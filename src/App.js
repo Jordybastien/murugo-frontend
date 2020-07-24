@@ -3,12 +3,15 @@ import Routing from './router';
 import { connect } from 'react-redux';
 import { decodeToken, tokenKey } from './services/auth';
 import { setAuthedUser } from './actions/authedUser';
-// import { handleInitialData } from './actions/initialData';
+import { handleInitialData } from './actions/initialData';
 
 class App extends Component {
-  // componentDidMount() {
-  //   this.props.dispatch(handleInitialData());
-  // }
+  componentDidMount() {
+    const user = refreshUser(this.props);
+    if (user) {
+      this.props.dispatch(handleInitialData());
+    }
+  }
   render() {
     refreshUser(this.props);
     const { loading } = this.props;
